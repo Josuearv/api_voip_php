@@ -16,5 +16,7 @@ class CdrCOntroller extends Controller
         $data = DB::table('pkg_cdr')
         ->whereBetween('starttime',[$startDate,$endDate])
         ->get();
+
+        return response()->json($data);
     }
 }
